@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Postagem{% endblock %}
+
+{% block content %}
+    <table>
+        <tr>
+            <td>Título:</td>
+            <td>{{ post['title'] }}</td>
+        </tr>
+    
+        <tr>
+            <td>Conteúdo:</td>
+            <td>{{ post['content'] }}</td>
+        </tr>
+        <tr>
+            <td>Data:</td>
+            <td>{{ post['created'] }}</td>
+        </tr>
+    </table>
+
+    <a href="{{ url_for('listar_postagens') }}">
+        Voltar
+    </a>
+{% endblock %}

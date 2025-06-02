@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Postagens{% endblock %}
+
+{% block content %}
+
+    <a href="{{ url_for('criar_postagem') }}">Nova Postagem</a>
+
+    <table>
+        <tr>
+            <td>Titulo</td>
+            <td>Data</td>
+            <td>Ação</td>
+            <td>Ação</td>
+        </tr>
+        
+        {% for post in posts %}
+        <tr>
+            <td> 
+                <a href="{{ url_for('abrir_postagem', post_id=post['id']) }}"> 
+                    {{ post['title'] }}
+                </a>
+            </td>
+            <td>{{ post['created'] }}</td>
+
+            <td>
+                <a href="{{ url_for('editar_postagem', post_id=post['id']) }}">
+                    Alterar
+                </a>
+            </td>
+            <td>
+                <a href="{{ url_for('deletar_postagem', post_id=post['id']) }}">
+                    Excluir
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
