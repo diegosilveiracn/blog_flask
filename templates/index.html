@@ -17,19 +17,19 @@
         {% for post in posts %}
         <tr>
             <td> 
-                <a href="{{ url_for('abrir_postagem', post_id=post['id']) }}"> 
+                <a href="{{ url_for('abrir_postagem', post_id=post.id) }}"> 
                     {{ post['title'] }}
                 </a>
             </td>
             <td>{{ post['created'] }}</td>
 
             <td>
-                <a href="{{ url_for('editar_postagem', post_id=post['id']) }}">
+                <a href="{{ url_for('editar_postagem', post_id=post.id) }}">
                     Alterar
                 </a>
             </td>
             <td>
-                <a href="{{ url_for('deletar_postagem', post_id=post['id']) }}">
+                <a href="{{ url_for('deletar_postagem', post_id=post.id) }}">
                     Excluir
                 </a>
             </td>
